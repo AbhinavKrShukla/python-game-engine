@@ -6,16 +6,24 @@ from camera import Camera
 from light import Light
 from mesh import Mesh
 from scene import Scene
+import pyautogui
 
 
 class GraphicsEngine:
 
-	def __init__(self, win_size = (1366, 768)):
+	def __init__(self, win_size = (1920, 1080)):		# 1366, 768
 		# init pygame module
 		pygame.init()
+		# win_info = pygame.display.Info()
+		# win_size = (win_info.current_w, win_info.current_h)
+		# print(win_size)
+		# exit(0)
+
 		# window size
-		self.WIN_SIZE = win_size
-		WIN_LIST = [1366, 768,]
+		# self.WIN_SIZE = win_size
+		self.WIN_SIZE = pyautogui.size()
+		# print(self.WIN_SIZE[0], self.WIN_SIZE[1])
+		# WIN_LIST = [1366, 768,]
 		# set opengl context
 		pygame.display.gl_set_attribute(pygame.GL_CONTEXT_MAJOR_VERSION, 3)
 		pygame.display.gl_set_attribute(pygame.GL_CONTEXT_MINOR_VERSION, 3)

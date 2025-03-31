@@ -34,7 +34,7 @@ class Camera:
 			mouse_x, mouse_y = pygame.mouse.get_pos()
 			if mouse_x <= 0 or mouse_x >= self.app.WIN_SIZE[0] - 1 or mouse_y <= 0 or mouse_y >= self.app.WIN_SIZE[1] - 1:
 				# Reset the cursor position to the center of the window
-				pygame.mouse.set_pos((1366/2, 768/2))
+				pygame.mouse.set_pos((self.app.WIN_SIZE[0]//2, self.app.WIN_SIZE[1]//2))
 
 
 	def update_camera_vectors(self):
